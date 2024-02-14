@@ -1,0 +1,19 @@
+@name=Example Request
+
+
+
+POST http://localhost:3001/api/jobs
+Content-Type: application/json
+{
+  "cargo": "Ingeniero de Software",
+  "empresa": "TechSolutions",
+  "ciudad": "Ciudad Tecnológica",
+  "pago": "$80,000 - $100,000",
+  "tiempoDeTrabajo": "Tiempo Completo",
+  "palabrasClave": ["Java", "Spring Boot", "MySQL"]
+}
+
+###
+
+GET http://localhost:3001/api/jobs
+
