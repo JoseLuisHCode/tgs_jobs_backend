@@ -4,16 +4,54 @@
 
 POST http://localhost:3001/api/jobs
 Content-Type: application/json
+
 {
-  "cargo": "Ingeniero de Software",
-  "empresa": "TechSolutions",
-  "ciudad": "Ciudad Tecnológica",
-  "pago": "$80,000 - $100,000",
-  "tiempoDeTrabajo": "Tiempo Completo",
-  "palabrasClave": ["Java", "Spring Boot", "MySQL"]
+  "cargo": "Desarrollador Full Stack",
+  "empresa": "TGS Tech",
+  "ciudad": "Ciudad de Ejemplo",
+  "pago": 60000,
+  "tipoDeTrabajo": "Tiempo Completo",
+  "descripcion": "Trabajo emocionante como desarrollador full stack",
+  "requisitos": "Experiencia en React y Node.js",
+  "experienciaRequerida": 2,
+  "habilidadesNecesarias": ["React", "Node.js"],
+  "fechaPublicacion": "2024-03-01",
+  "fechaLimite": "2024-03-15"
 }
 
 ###
 
 GET http://localhost:3001/api/jobs
+
+###
+
+GET http://localhost:3001/api/protected
+
+
+
+### Crear usuario administrador
+
+POST http://localhost:3001/api/register
+Content-Type: application/json
+
+{
+  "correo": "admin@example.com",
+  "contrasena": "admin123",
+  "rol": "admin"
+}
+
+### Iniciar Sesión como Administrador
+
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "correo": "admin@example.com",
+  "contrasena": "admin123"
+}
+
+### Pruebas en Rutas Protegidas 
+
+GET http://localhost:3001/api/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQ2MTIwYWNmMGNlODFiYWQxNjNjYzQiLCJyb2wiOiJ1c3VhcmlvIiwiaWF0IjoxNzA4NTMyOTYwLCJleHAiOjE3MDg1MzY1NjB9.tdMARYkBQXBDO9ye0hzSZ7evRwRmiYkHqFJfnhdTGjU
 
