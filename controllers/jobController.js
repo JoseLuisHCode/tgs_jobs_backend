@@ -1,4 +1,4 @@
-// jobController.js
+// controllers/jobController.js
 const Job = require('../models/Job');
 
 const jobController = {
@@ -31,7 +31,7 @@ const jobController = {
       }
       res.status(200).json(job);
     } catch (error) {
-      console.error('Error al obtener trabajo por ID:', error);
+      console.error('Error al obtener trabajo por ID. Consulta los registros para más detalles.', error);
       res.status(500).json({ error: 'Error interno del servidor.' });
     }
   },

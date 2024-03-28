@@ -1,3 +1,4 @@
+// models/User.js
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -14,6 +15,15 @@ const userSchema = new mongoose.Schema({
   rol: { type: String,
     enum: ['usuario', 'admin'],
     default: 'usuario' },
+    
+  userDetails: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserDetails'
+  },
+  userCV: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserCV'
+  }
 });
 
 // Antes de guardar, hashea la contraseña
@@ -21,9 +31,13 @@ userSchema.pre('save', async function (next) {
   const user = this;
   if (!user.isModified('contrasena')) return next();
 
-  const hash = await bcrypt.hash(user.contrasena, 10);
-  user.contrasena = hash;
-  next();
+  try {
+    const hash = await bcrypt.hash(user.contrasena, 10);
+    user.contrasena = hash;
+    next();
+  } catch (error) {
+    return next(error);
+  }
 });
 
 // Método para comparar contraseñas

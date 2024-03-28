@@ -3,13 +3,14 @@
 const express = require('express');
 const router = express.Router();
 const userRoutes = require('./userRoutes');
-const protectedRoutes = require('./protectedRoutes');
 const jobRoutes = require('./jobRoutes');
-const backofficeRoutes = require('./backofficeRoutes'); // Nueva importación
+const applicationRoutes = require('./applicationRoutes');
+const userDetailsRoutes = require('./userDetailsRoutes'); 
+const userCVRoutes = require('./userCVRoutes'); 
 
-router.use('/api', userRoutes);
-router.use('/api', protectedRoutes);
-router.use('/api', jobRoutes);
-router.use('/api/backoffice', backofficeRoutes); // Nueva ruta para el backoffice
-
+router.use('/user', userRoutes);
+router.use('/job', jobRoutes);
+router.use('/application', applicationRoutes);
+router.use('/user-details', userDetailsRoutes); 
+router.use('/user-cv', userCVRoutes); 
 module.exports = router;

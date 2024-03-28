@@ -19,7 +19,7 @@ const applicationSchema = new mongoose.Schema({
   },
   resume: {
     type: String,  // Puedes ajustar este campo según la estructura de los currículums en tu aplicación
-    required: true,
+    
   },
   // Agrega cualquier otra información relevante para la aplicación
 });
