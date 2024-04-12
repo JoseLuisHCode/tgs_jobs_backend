@@ -1,8 +1,8 @@
-// models/Job.js
+// models/Vacancy.js
 
 const mongoose = require('mongoose');
 
-const jobSchema = new mongoose.Schema({
+const vacancySchema = new mongoose.Schema({
   cargo: {
     type: String,
     required: true,
@@ -50,6 +50,6 @@ const jobSchema = new mongoose.Schema({
   },
 });
 
-const Job = mongoose.model('Job', jobSchema);
+const Vacancy = mongoose.model('Vacancy', vacancySchema);
 
-module.exports = Job;
+module.exports = Vacancy;

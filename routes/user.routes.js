@@ -1,9 +1,9 @@
-// routes/userRoutes.js
+// routes/user.routes.js
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const { body } = require('express-validator');
-const UserController = require('../controllers/UserController');
+const UserController = require('../controllers/user.controller');
 const authMiddleware = require('../middleware/authMiddleware');
 
 const registerValidationRules = [

@@ -1,7 +1,7 @@
-// routes/userDetailsRoutes.js
+// routes/user.details.routes.js
 const express = require('express');
 const router = express.Router();
-const UserDetailsController = require('../controllers/UserDetailsController');
+const UserDetailsController = require('../controllers/user.details.controller');
 const authMiddleware = require('../middleware/authMiddleware');
 
 router.get('/user-details/:userId', authMiddleware.authenticate, UserDetailsController.getUserDetailsByUserId);

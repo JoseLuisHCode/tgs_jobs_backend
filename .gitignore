@@ -1,1 +1,36 @@
-/node_modules
+# Archivos y directorios de Node.js
+node_modules/
+npm-debug.log*
+.npm
+.node_repl_history
+
+# Archivos y directorios de macOS
+.DS_Store
+
+# Archivos y directorios de Windows
+Thumbs.db
+Desktop.ini
+
+# Archivos de entorno
+.env
+.env.*
+
+# Directorio de datos de MongoDB
+data/
+
+# Archivos de registro
+logs/
+*.log
+
+# Archivos de compilación
+dist/
+build/
+
+# Archivos de editores de código
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Otros archivos
+.tmp/

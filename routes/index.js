@@ -2,15 +2,16 @@
 
 const express = require('express');
 const router = express.Router();
-const userRoutes = require('./userRoutes');
-const jobRoutes = require('./jobRoutes');
-const applicationRoutes = require('./applicationRoutes');
-const userDetailsRoutes = require('./userDetailsRoutes'); 
-const userCVRoutes = require('./userCVRoutes'); 
+const userRoutes = require('./user.routes');
+const vacancyRoutes = require('./vacancy.router');
+const applicationRoutes = require('./application.routes');
+const userDetailsRoutes = require('./user.details.routes'); 
+const userCVRoutes = require('./user.cv.routes'); 
 
 router.use('/user', userRoutes);
-router.use('/job', jobRoutes);
+router.use('/vacancy', vacancyRoutes);
 router.use('/application', applicationRoutes);
 router.use('/user-details', userDetailsRoutes); 
 router.use('/user-cv', userCVRoutes); 
+
 module.exports = router;

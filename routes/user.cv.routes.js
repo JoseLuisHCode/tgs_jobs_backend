@@ -1,7 +1,7 @@
 // routes/userCVRoutes.js
 const express = require('express');
 const router = express.Router();
-const UserCVController = require('../controllers/UserCVController');
+const UserCVController = require('../controllers/user.cv.controller');
 const authMiddleware = require('../middleware/authMiddleware');
 
 // Rutas para el CV del usuario

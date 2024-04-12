@@ -2,16 +2,16 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
-const applicationController = require('../controllers/applicationController');
+const applicationController = require('../controllers/application.controller');
 
 // Crear una nueva aplicación
-router.post('/applications/:jobId', authMiddleware.authenticate, applicationController.createApplication );
+router.post('/applications/:vacancyId', authMiddleware.authenticate, applicationController.createApplication );
 
 // Obtener todas las aplicaciones
 router.get('/applications', authMiddleware.authenticate, authMiddleware.isAdmin, applicationController.getAllApplications );
 
-//Obtener aplicacion por jobid
-router.get('/applications/:jobId', authMiddleware.authenticate, authMiddleware.isAdmin, applicationController.getApplicationsByJobId );
+//Obtener aplicacion por vancante
+router.get('/applications/:vacancyId', authMiddleware.authenticate, authMiddleware.isAdmin, applicationController.getApplicationsByVacancyId );
 
 //Obtener aplicacion por userid
 router.get('/appuserid', authMiddleware.authenticate, applicationController.getApplicationsByUserId );
